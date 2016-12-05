@@ -52,18 +52,70 @@ There will be two blank lines before and after the Abstract. \dots
 %
 \section{Introduction}
 %
-Where we discuss why structured KBs are important and why it is worth to study external references.\\
-Wikidata, what is it?\\
+-- It is more and more difficult to navigate in the incommensurable ocean of information available on the Web. From a layman point of view, methods to distinguish reliable and trustworthy information become increasingly necessary in a time in which the term ``post-truth''\footnote{\url{http://www.nytimes.com/2016/08/24/opinion/campaign-stops/the-age-of-post-truth-politics.html?\_r=0}} has been coined to indicate the reliance of an increasingly larger number of people of imprecise, or outrightly false, information not supported by any evidence.\\
+Concerning the narrower category of data consumer and data producer, quality of data is crucial to [sth].\\
+-- Characteristics of `good' information according to users (cite papers)\\
+-- On the Web of Data, provenance of information is a dimension of quality, which facilitate the reuse of data by improving the detection of errors and decision-processes based on the information source \cite{DBLP:conf/semweb/LehmannGMN12}.\\
+-- The lack of provenance information hinders the reuse of data for business purposes \cite{DBLP:conf/semweb/HartigZ08}.\\
+-- The issue of the quality and provenance of information may be particularly important in collaboratively authored information systems.\\
+-- As per its policies, information in Wikipedia needs to be backed by external references (something more about sources in Wikipedia)\\
+-- Following to the read-write mode of the Web 2.0, structured data sources have arisen. The data coming from these sources can be reused by machines, which can perform inferences and reason over them. DBpedia is an example (sth about that); in these systems, the need of relying on trustworthy information is somewhat intensified by the fact that their data serves as a base to provide tailored information to users. E.g. when users consult a Wikipedia article, they know that the online encyclopaedia is the source and they will probably judge the information found in the article accordingly. On the contrary, if the information is provided by an application which relies on a determined structured knowledge source, the primary source of info will be hidden (check); Therefore, it is important to know that sources are trustworthy\\
+-- Wikidata (what is and why it uses references)\\
+
 References in Wikidata\\
 Vision\\
 Mission\\
 Steps\\
 3 contributions\\
 
+
+The rise of digital technologies centred around the World Wide Web has led to a proliferation of information that is readily available to users quickly and conveniently. However, in a time when ``post-truth'' has been awarded Word of the Year for 2016\footnote{\url{https://en.oxforddictionaries.com/word-of-the-year/word-of-the-year-2016}}, reflecting the rise in people being influenced by information with little supporting evidence rather than objective facts, it is becoming increasingly important to investigate the means by which trustworthy and reliable facts can be distinguished and highlighted on the Web. With the Web used at such a scale by people everywhere to find information, it is crucial to identify reliable sources of high-quality data, with similarly trustworthy references to support them. Furthermore, as communities of users continue to play a large role in the collection, structuring and aggregation of information, it is vital to investigate whether these resulting knowledge bases contain accurate information, or whether they are a contributing factor to the ``post-truth'' world. 
+
+Data quality is an integral part of any online knowledge base--collections of terms describing entities and the relationships existing between them \cite{DBLP:series/ihis/2009hoo}. As the Web continues to transition from Web 2.0--the Web of people--to Web 3.0, or the Web of data, it becomes increasingly important to ensure that the \emph{data} at the heart of this is of a good quality with sufficient details regarding its provenance to facilitate its reuse in a wide-range of applications across all domains. When these knowledge bases are developed from online collaborative systems--bringing together the contributions of many users--there are numerous factors that could affect the resulting data quality. There are notable examples of success--Wikipedia has developed to contain articles about millions of concepts in numerous different langues, and has been found to have comparable quality to traditional encyclopedias \cite{giles2005internet}.
+
+A more recent project is Wikidata, a knowledge graph (KG) that supports Wikipedia by providing structured data. As with any knowledge base, it is important to have data that is high quality and well referenced, however due to the popularity of Wikipedia where this data is primarily used, it is particularly pertinent to investigate in further detail. Wikidata releases its data under a CC0 open license, meaning that it can be reused across the Web for an unlimited number of other information-based systems and applications; these all rely on the KG containing accurate and reliable information. Wikipedia's policies state that information contained on the encyclopaedia must be supported by external references, but it is currently difficult to ascertain how accurate or reliable these are for the facts that are sourced from Wikidata. 
+
+\subsection{Wikidata}
+Wikidata's features set it apart from a number of similar projects. We have already mentioned its open licence, which allows anyone to reuse and share its data. In addition, Wikidata is completely edited and maintained by users, which makes possible to quickly correct and update any piece of information. As a comparison, we may think of DBpedia, which is a central node of the Linked Open Data cloud. DBpedia is is periodically extracted from Wikipedia: this means that erroneous or outdated information cannot be directly modified, unlike Wikidata, but it has to be first corrected in Wikipedia, to be subsequently imported. Additionally, the community behind Wikidata counts after only about four years---the project started in October 2012---with more than 100 thousand registered human editors. The user pool of Freebase, a KG with characteristics close to those of Wikidata which shut down in May 2015, reached by contrast a size of an order of magnitude smaller \cite{farber2015comparative}\footnote{This is a rough estimation of the number of editors contributing to Freebase, as it was not possible to retrieve any detailed information about it.}.  Besides maintaining the information in Wikidata up to date, its vast community has also contributed to add facts regarding more than 24 million entities\footnote{add ref}. Although this is still a smaller number than the entities covered in other projects, such as DBpedia or YAGO \cite{farber_stats}, it spans over several domains and it is still growing fast.\\
+\textit{Items} and \textit{Properties} are Wikidata's building blocks. Items represent instance and classes, whilst Properties express relations between Items, or between Items and string values [check]. Wikidata's knowledge is encoded via a property-value model. \textit{Claims}, i.e. property-value pairs, are used to state facts about Items. A claim can be enriched by qualifiers and/or references, forming a \textit{statement}. Qualifiers set a limitation to the validity of a claim, e.g. [add example]. Thanks to this feature, contrasting claims can coexist, thus permitting the expression of diverse points of view. As regards references, these link a claim to a primary source that supports it. Further details concerning references are provided in Section [add]. 
+
+
+
+\subsection{Aims and Scope}
+
+
 %
-\section{Related work}
+\section{Background and related work}
 %
-http://www.korfiatis.info/webpagen/wp-content/papercite-data/pdf/2006-OIR.pdf
+\subsection{Provenance information}
+Data-oriented approaches vs. process-oriented approaches \cite{hartig};\\
+Open Provenance Model \cite{moreau}
+
+Provenance can be considered under two different aspects \cite{DBLP:conf/btw/GlavicD07}. The first one (transformation provenance) focusses on the generative processes behind a data item, whilst the other (source provenance) sees provenance information as the source from which a data item is derived from [change it].\\
+Approaches to provenance recording: computing prov. information when data is created vs. computing prov. information when data is requested (\textit{lazy} vs. \textit{eager} approach). Eager approaches are based on annotations about source data items and transformation: this is the approach followed by Wikidata.\\
+Contributing source: all source data items that contributed to the creation of a result data items; original source: concrete origin of result \cite{DBLP:conf/btw/GlavicD07}.\\
+Source provenance: input source, positive contributing source, original source. Wikidata = original source.\\
+A source may be presented as the original data, metadata attached to the source, source hierarchy structure, or a combination of those. \\
+Other aspect of provenance model: \textit{world model}: open or closed. Is Wikidata provenance model a mix of the two?
+
+\subsection{Provenance information in Wikidata}
+References theoretically required for all statements; exceptions: external ids, obvious information (e.g. instance of human)
+
+
+
+
+---different approaches to state provenance \cite{DBLP:conf/btw/GlavicD07};\\
+--- provenance model for manually curated data \cite{DBLP:conf/ipaw/BunemanCCV06}
+
+\subsection{Evaluation and discovery of provenance information}
+\cite{DBLP:journals/oir/KorfiatisPB06} evaluates Wikipedia sources by means of social network measures.\\
+DeFacto is a system to retrieve sources on the Web to add provenance information to structured Knowledge Bases \cite{DBLP:conf/semweb/LehmannGMN12}.\\
+\cite{DBLP:conf/cikm/FetahuMNA16} employs a machine learning approach to find news citations for Wikipedia. They generate relevance scores.
+
+\subsection{About Wikidata}
+Description of Wikidata \cite{DBLP:journals/cacm/VrandecicK14};\\
+Wikidata is a secondary database\\
+Part of the Linked Open Data cloud \cite{DBLP:conf/semweb/ErxlebenGKMV14}.
 
 \section{Framework for discovery and evaluation}
 Methods\\
